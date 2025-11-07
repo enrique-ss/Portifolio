@@ -180,6 +180,12 @@ section {
     width: 24px;
 }
 
+.email-inicio a,
+.github-inicio a {
+    text-decoration: none;
+    color: #333;
+}
+
 /* ------------------------------
    TÍTULOS E HABILIDADES
 ------------------------------ */
@@ -203,12 +209,13 @@ h2 img {
 }
 
 .habilidades p {
-    border: 2px solid #333;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
     padding: 15px 30px;
-    border-radius: 10px;
+    border-radius: 16px;
     font-weight: bold;
     transition: all 0.3s;
     cursor: pointer;
+    background-color: #fff;
 }
 
 .habilidades p:hover {
@@ -225,6 +232,19 @@ h2 img {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    border-radius: 10px;
+    max-width: max-content;
+}
+
+.experiencia-1:hover,
+.experiencia-2:hover {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: translateY(-3px);
+    cursor: pointer;
 }
 
 .experiencia h3 {
