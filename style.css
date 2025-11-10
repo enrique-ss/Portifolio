@@ -1,6 +1,4 @@
-/* ------------------------------
-   RESET E CONFIGURAÇÕES GERAIS
------------------------------- */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +6,7 @@
 }
 
 body {
-    background-color: #f0f8ff;
+    background-color: #d6e8f8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #333;
     transition: background-color 0.3s ease;
@@ -18,14 +16,12 @@ body:has(#toggle-projetos:checked) {
     overflow: hidden;
 }
 
-/* ------------------------------
-   HEADER E MENU
------------------------------- */
+/* Header fixo */
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 15px;
+    padding: 16px;
     background-color: #333;
     color: #f0f8ff;
     position: fixed;
@@ -34,13 +30,14 @@ header {
     right: 0;
     z-index: 1000;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 16px;
 }
 
+/* Menu de navegação */
 .menu {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
@@ -54,9 +51,11 @@ header {
     opacity: 0.7;
 }
 
-/* ------------------------------
-   TOGGLE PROJETOS
------------------------------- */
+body:has(#toggle-projetos:checked) .menu {
+    display: none;
+}
+
+/* Toggle entre início e projetos */
 .projetos-toggle input[type="checkbox"] {
     display: none;
 }
@@ -81,21 +80,18 @@ header {
     display: none;
 }
 
-/* alterna o texto do label */
-#toggle-projetos:checked~.toggle-label .label-projetos {
+#toggle-projetos:checked ~ .toggle-label .label-projetos {
     display: none;
 }
 
-#toggle-projetos:checked~.toggle-label .label-inicio {
+#toggle-projetos:checked ~ .toggle-label .label-inicio {
     display: block;
 }
 
-/* ------------------------------
-   CONTEÚDO PRINCIPAL
------------------------------- */
+/* Container principal */
 .container {
-    margin-top: 50px;
-    padding: 20px;
+    margin-top: 72px;
+    padding: 24px;
     transition: opacity 0.5s ease, transform 0.6s ease;
 }
 
@@ -107,19 +103,13 @@ body:has(#toggle-projetos:checked) .container {
     position: absolute;
 }
 
-body:has(#toggle-projetos:checked) .menu {
-    display: none;
-}
-
 section {
     max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 40px 20px;
+    margin: 0 auto 64px;
+    padding: 32px 24px;
 }
 
-/* ------------------------------
-   SEÇÃO INÍCIO
------------------------------- */
+/* Seção de apresentação */
 #inicio {
     display: flex;
     flex-direction: column;
@@ -131,40 +121,41 @@ section {
     border-radius: 50%;
     width: 200px;
     height: 200px;
-    margin-bottom: 30px;
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 32px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
 }
 
 .apresentacao h1 {
     font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .apresentacao p {
     font-size: 1.1em;
     line-height: 1.6;
     max-width: 600px;
-    margin: 10px auto;
+    margin: 0 auto 16px;
     color: #555;
 }
 
+/* Botões de contato */
 .btn-inicio {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 32px;
 }
 
 .email-inicio,
 .github-inicio {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
+    gap: 12px;
+    padding: 16px 24px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -186,14 +177,12 @@ section {
     color: #333;
 }
 
-/* ------------------------------
-   TÍTULOS E HABILIDADES
------------------------------- */
+/* Títulos das seções */
 h2 {
     display: flex;
     align-items: center;
     font-size: 2em;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 h2 img {
@@ -202,15 +191,16 @@ h2 img {
     margin-right: 12px;
 }
 
+/* Grid de habilidades */
 .habilidades {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
 .habilidades p {
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
-    padding: 15px 30px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px 32px;
     border-radius: 16px;
     font-weight: bold;
     transition: all 0.3s;
@@ -225,42 +215,42 @@ h2 img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ------------------------------
-   EXPERIÊNCIAS
------------------------------- */
+/* Cards de experiência */
 .experiencias {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    border-radius: 10px;
-    max-width: max-content;
+    gap: 32px;
+}
+
+.experiencia-1,
+.experiencia-2 {
+    transition: all 0.3s;
+    padding: 16px;
 }
 
 .experiencia-1:hover,
 .experiencia-2:hover {
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
     cursor: pointer;
 }
 
-.experiencia h3 {
-    margin-bottom: 8px;
+.experiencia-1 h3,
+.experiencia-2 h3 {
+    margin-bottom: 12px;
     font-size: 1.3em;
 }
 
-.experiencia p {
-    margin: 5px 0;
+.experiencia-1 p,
+.experiencia-2 p {
+    margin: 8px 0;
     line-height: 1.6;
     color: #555;
 }
 
-/* ------------------------------
-   SOBRE
------------------------------- */
+/* Sobre mim */
 .sobre p {
     font-size: 1.1em;
     line-height: 1.8;
@@ -268,16 +258,14 @@ h2 img {
     color: #555;
 }
 
-/* ------------------------------
-   PROJETOS SECTION
------------------------------- */
+/* Seção de projetos (oculta inicialmente) */
 .projetos-section {
     position: fixed;
-    top: 60px;
+    top: 56px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 60px);
-    background-color: #f0f8ff;
+    height: calc(100vh - 56px);
+    background-color: #d6e8f8;
     z-index: 998;
     opacity: 0;
     visibility: hidden;
@@ -293,7 +281,7 @@ body:has(#toggle-projetos:checked) .projetos-section {
 }
 
 .projetos-content {
-    padding: 20px;
+    padding: 32px 24px;
     min-height: 100%;
     text-align: center;
 }
@@ -302,17 +290,16 @@ body:has(#toggle-projetos:checked) .projetos-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 32px;
+    margin-bottom: 32px;
 }
 
-/* ------------------------------
-   CARTÕES DE PROJETOS
------------------------------- */
+/* Cards dos projetos */
 .projeto {
     background-color: #fff;
-    padding: 30px;
+    padding: 32px;
     border-radius: 10px;
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     max-width: 300px;
@@ -325,7 +312,7 @@ body:has(#toggle-projetos:checked) .projetos-section {
 
 .projeto h3 {
     font-size: 1.6em;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .projeto p {
@@ -333,22 +320,18 @@ body:has(#toggle-projetos:checked) .projetos-section {
     color: #555;
 }
 
-/* ------------------------------
-   DESTAQUE E LINGUAGENS
------------------------------- */
+/* Destaque e projeto em desenvolvimento */
 #destaque,
 #projetos-desenvolvimento {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     max-width: 70%;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 10px;
-    margin-top: 40px;
+    margin: 32px auto;
+    padding: 32px;
+    gap: 16px;
 }
 
 .destaque-btn a,
@@ -356,14 +339,15 @@ body:has(#toggle-projetos:checked) .projetos-section {
     color: rgb(44, 136, 255);
     text-decoration: none;
     transition: all 0.3s;
-    margin-top: 10px;
+    margin-top: 16px;
 }
 
+/* Tags de linguagens */
 #linguagens {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 12px;
+    margin-top: 16px;
 }
 
 #linguagens span {
@@ -371,10 +355,9 @@ body:has(#toggle-projetos:checked) .projetos-section {
     padding: 8px 16px;
     border-radius: 16px;
     font-size: 0.9em;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.959);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
-    margin-top: 10px;
 }
 
 #linguagens span:hover {
@@ -383,18 +366,56 @@ body:has(#toggle-projetos:checked) .projetos-section {
     cursor: pointer;
 }
 
-/* ------------------------------
-   RESPONSIVIDADE
------------------------------- */
+/* Responsividade para mobile */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        text-align: center;
+        padding: 12px;
+    }
+
+    .projetos-toggle h2 {
+        font-size: 1.1em;
+    }
+
+    .menu {
+        gap: 12px;
+        font-size: 0.9em;
+    }
+
+    .menu span {
+        display: none;
+    }
+
+    .container {
+        margin-top: 60px;
+        padding: 16px;
+    }
+
+    section {
+        padding: 24px 16px;
+        margin-bottom: 48px;
+    }
+
+    #luiz {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 24px;
+    }
+
+    .apresentacao h1 {
+        font-size: 1.8em;
+        margin-bottom: 12px;
+    }
+
+    .apresentacao p {
+        font-size: 1em;
+        margin-bottom: 12px;
     }
 
     .btn-inicio {
         flex-direction: column;
         width: 100%;
+        gap: 16px;
+        margin-top: 24px;
     }
 
     .email-inicio,
@@ -403,7 +424,91 @@ body:has(#toggle-projetos:checked) .projetos-section {
         justify-content: center;
     }
 
-    #destaque {
-        text-align: center;
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 24px;
+    }
+
+    h2 img {
+        height: 24px;
+        width: 24px;
+    }
+
+    .habilidades {
+        justify-content: center;
+    }
+
+    .habilidades p {
+        padding: 12px 24px;
+    }
+
+    .experiencias {
+        gap: 24px;
+    }
+
+    #destaque,
+    #projetos-desenvolvimento {
+        max-width: 90%;
+        padding: 24px;
+    }
+
+    .projeto {
+        max-width: 100%;
+        padding: 24px;
+    }
+
+    #linguagens {
+        justify-content: center;
+    }
+
+    .projetos-section {
+        top: 48px;
+        height: calc(100vh - 48px);
+    }
+
+    .projetos-content {
+        padding: 24px 16px;
+    }
+
+    #projetos-lista {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    header,
+    .container {
+        padding: 12px;
+    }
+
+    section {
+        padding: 20px 12px;
+    }
+
+    .apresentacao h1 {
+        font-size: 1.5em;
+    }
+
+    .apresentacao p {
+        font-size: 0.95em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .habilidades p {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    #linguagens span {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+
+    #destaque,
+    #projetos-desenvolvimento {
+        padding: 20px;
     }
 }
